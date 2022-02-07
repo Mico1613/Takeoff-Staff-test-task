@@ -3,7 +3,7 @@ import React from 'react';
 type Props = {};
 
 function Contacts({}: Props) {
-  return <div></div>;
+  return <div>Contacts</div>;
 }
 
 export default Contacts;

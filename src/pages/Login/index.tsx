@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import Registration from "../../components/Registration";
 
 type Props = {};
 
 function Login({}: Props) {
-  return <div></div>;
+  return <Registration />;
 }
 
 export default Login;
