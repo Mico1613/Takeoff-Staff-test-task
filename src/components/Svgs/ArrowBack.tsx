@@ -15,9 +15,9 @@ function ArrowBackSvg({}: Props) {
           points="244 400 100 256 244 112"
           fill="none"
           stroke="#575757"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="48px"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="48px"
         />
         <line
           x1="120"
@@ -26,9 +26,9 @@ function ArrowBackSvg({}: Props) {
           y2="256"
           fill="none"
           stroke="#575757"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="48px"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="48px"
         />
       </svg>
     </>
