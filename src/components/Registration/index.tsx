@@ -1,18 +1,23 @@
 import React from "react";
+import ArrowBackSvg from "../Svgs/ArrowBack";
 import styles from "./Registration.module.scss";
 
 type Props = {};
 
 function Registration({}: Props) {
   return (
-    <main className={styles.login}>
+    <main className={styles.registration}>
+      <i className={styles.svgWrapper}>
+        <ArrowBackSvg />
+      </i>
       <input type="text" placeholder="Логин" className={styles.input} />
-      <input type="password" placeholder="Пароль" className={styles.input} />
-      <button className={styles.btn}>Войти</button>
-      <div className={styles.toRegistration}>
-        <p>Нет аккаунта?</p>
-        <button>Зарегистрируйтесь!</button>
-      </div>
+      <input type="text" placeholder="Пароль" className={styles.input} />
+      <input
+        type="text"
+        placeholder="Повторите пароль"
+        className={styles.input}
+      />
+      <button className={styles.btn}>Зарегистрироваться</button>
     </main>
   );
 }

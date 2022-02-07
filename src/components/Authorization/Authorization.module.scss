@@ -1,11 +1,7 @@
-.registration {
+.login {
   width: 300px;
   display: flex;
   flex-direction: column;
-  .svgWrapper {
-    cursor: pointer;
-    margin-bottom: 5px;
-  }
   .input {
     color: #fff;
     width: 100%;
@@ -31,6 +27,18 @@
     letter-spacing: 0.5px;
     &:hover {
       box-shadow: 2px 2px 2px 2px #aa2455;
+    }
+  }
+  .toRegistration {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.432);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    button {
+      color: #fff;
+      font-weight: 700;
     }
   }
 }
