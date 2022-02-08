@@ -1,0 +1,7 @@
+{
+  "accounts": [
+    { "id": 1, "login": "qwerty", "password": "123" },
+    { "id": 2, "login": "asdfg", "password": "456" },
+    { "id": 3, "login": "zxcvb", "password": "789" }
+  ]
+}
