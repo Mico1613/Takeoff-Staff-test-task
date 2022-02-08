@@ -1,7 +1,7 @@
 import React from "react";
 import { useAppDispatch } from "../../hooks/redux-hooks";
 import { closeRegistrationWindow } from "../../redux/actions/LoginActions";
-import ArrowBackSvg from "../Svgs/ArrowBack";
+import ArrowBackSvg from "../Svgs/ArrowBackSvg";
 import styles from "./Registration.module.scss";
 
 type Props = {};
