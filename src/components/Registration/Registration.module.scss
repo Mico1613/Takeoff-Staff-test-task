@@ -40,4 +40,12 @@
       box-shadow: 2px 2px 2px 2px #aa2455;
     }
   }
+  .nonActiveBtn {
+    background-color: #f089ae;
+    pointer-events: none;
+    cursor: default;
+    &:hover {
+      box-shadow: none;
+    }
+  }
 }

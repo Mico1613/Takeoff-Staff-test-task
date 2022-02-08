@@ -1,7 +1,9 @@
 {
   "accounts": [
-    { "id": 1, "login": "qwerty", "password": "123" },
-    { "id": 2, "login": "asdfg", "password": "456" },
-    { "id": 3, "login": "zxcvb", "password": "789" }
+    {
+      "id": "e02eb01d-d24a-4bbe-b5a6-19c35d57a5b5",
+      "login": "123",
+      "password": "123"
+    }
   ]
 }
