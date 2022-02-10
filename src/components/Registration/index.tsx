@@ -1,53 +1,26 @@
 import React, { useState } from "react";
-import createUser from "../../api/createUser";
-import getUsers from "../../api/getUsers";
-import { useAppDispatch } from "../../hooks/redux-hooks";
-import { closeRegistrationWindow } from "../../redux/actions/LoginActions";
-import ArrowBackSvg from "../Svgs/ArrowBackSvg";
+import ArrowBack from "../ArrowBack";
 import styles from "./Registration.module.scss";
+import buttonClassesSetter from "../../utils/ButtonClassesSetter";
+import useCreateUser from "../../hooks/useCreateUser";
 
-type Props = {};
-
-function Registration({}: Props) {
-  const dispatch = useAppDispatch();
-  const onCloseRegistrationWindow = () => {
-    dispatch(closeRegistrationWindow);
-  };
+function Registration() {
   const [loginInputValue, setLoginInputValue] = useState("");
   const [passwordInputValue, setPasswordInputValue] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const buttonClassesSetter = () => {
-    if (isLoading) {
-      return `${styles.btn} ${styles.nonActiveBtn}`;
-    }
-    return styles.btn;
-  };
 
-  async function onCreateUser() {
-    let isAccountExists = false;
-    setIsLoading(true);
-    const data = await getUsers();
-    for (let index = 0; index < data.length; index++) {
-      const element = data[index];
-      if (element.login === loginInputValue) {
-        isAccountExists = true;
-      }
+  const [isAccountExists, setIsAccountExists, isLoading, onCreateUser] =
+    useCreateUser(loginInputValue,passwordInputValue,setLoginInputValue,setPasswordInputValue);
+  
+  React.useEffect(() => {
+    if (isAccountExists) {
+      setIsAccountExists(false);
     }
-    if (!isAccountExists) {
-      createUser(loginInputValue, passwordInputValue);
-      setIsLoading(false);
-      return console.log("Zaregan");
-    }
-    setIsLoading(false);
-    return console.log("Ne zaregan");
-  }
+  }, [loginInputValue]);
+
+
   return (
     <main className={styles.registration}>
-      <i className={styles.svgWrapper}>
-        <button onClick={onCloseRegistrationWindow}>
-          <ArrowBackSvg />
-        </button>
-      </i>
+      <ArrowBack />
       <input
         type="text"
         placeholder="Логин"
@@ -62,7 +35,17 @@ function Registration({}: Props) {
         onChange={(e) => setPasswordInputValue(e.target.value)}
         value={passwordInputValue}
       />
-      <button className={buttonClassesSetter()} onClick={onCreateUser}>
+      {isAccountExists ? (
+        <p className={styles.accountExists}>
+          Такой аккаунт уже существует,
+          <br /> попробуйте другой логин
+        </p>
+      ) : null}
+
+      <button
+        className={buttonClassesSetter(isLoading, styles)}
+        onClick={onCreateUser}
+      >
         {isLoading ? <p>Загрузка...</p> : <p>Зарегистрироваться</p>}
       </button>
     </main>

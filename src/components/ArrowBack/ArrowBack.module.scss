@@ -1,0 +1,11 @@
+.svgWrapper {
+  margin-bottom: 5px;
+  button {
+    cursor: pointer;
+    svg {
+      &:hover {
+        stroke: #7a7a7a;
+      }
+    }
+  }
+}

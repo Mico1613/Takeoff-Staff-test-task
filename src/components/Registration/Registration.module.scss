@@ -2,17 +2,6 @@
   width: 300px;
   display: flex;
   flex-direction: column;
-  .svgWrapper {
-    margin-bottom: 5px;
-    button {
-      cursor: pointer;
-      svg {
-        &:hover {
-          stroke: #7a7a7a;
-        }
-      }
-    }
-  }
   .input {
     color: #fff;
     width: 100%;
@@ -47,5 +36,10 @@
     &:hover {
       box-shadow: none;
     }
+  }
+  .accountExists {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
   }
 }
