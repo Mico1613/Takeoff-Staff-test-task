@@ -1,4 +1,9 @@
 {
   "accounts": [
+    {
+      "id": "d1dd9240-1f9c-45eb-8eb7-ab74fcb4b39f",
+      "login": "123",
+      "password": "123"
+    }
   ]
 }
