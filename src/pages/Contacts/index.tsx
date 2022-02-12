@@ -2,11 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { getContacts } from "../../redux/actions/ContactsActions";
+import ContactsItems from "../../components/ContactsComponent/ContactsItems";
 
-type Props = {};
-
-function Contacts({ }: Props) {
-  
+function Contacts() {
   React.useEffect(() => {
     dispatch(getContacts());
   }, []);
@@ -16,7 +14,11 @@ function Contacts({ }: Props) {
 
   console.log(state);
 
-  return <div>Contacts</div>;
+  return (
+    <div>
+      <ContactsItems />
+    </div>
+  );
 }
 
 export default Contacts;

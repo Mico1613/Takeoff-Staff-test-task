@@ -1,0 +1,17 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  background: linear-gradient(#e66465, #9198e5);
+  padding: 10px 20px;
+  width: 300px;
+  justify-content: center;
+  p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
