@@ -3,15 +3,17 @@ import { useAppSelector } from "../../../hooks/redux-hooks";
 import IContactsData from "../../../redux/types/IContactsData";
 import ContactItem from "../ContactItem";
 import styles from "./ContactsItems.module.scss";
-type Props = {};
 
-function ContactsItems({}: Props) {
-  const { data } = useAppSelector((state) => state.ContactsReducer);
-  console.log(data);
+type Props = {
+  filteredValue: IContactsData[] | undefined;
+};
+
+function ContactsItems({ filteredValue }: Props) {
+  
 
   return (
     <div className={styles.wrapper}>
-      {data.map((item, index) => {
+      {filteredValue?.map((item, index) => {
         return <ContactItem key={`${item.id}_${index}`} item={item} />;
       })}
     </div>
