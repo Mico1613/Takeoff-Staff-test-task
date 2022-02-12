@@ -25,9 +25,6 @@ interface IContactsAxiosResponse {
   };
 }
 
-export const contactsOnLoading = {
-  type: "ON_LOADING",
-};
 
 export const contactsLoaded = {
   type: "LOADED",
@@ -45,7 +42,6 @@ export const setData = (payload: IContactsData[]) => ({
 
 export const getContacts = () => async (dispatch: AppDispatch) => {
   try {
-    dispatch(contactsOnLoading);
     const data = await axios.get("https://jsonplaceholder.typicode.com/users");
     const transformedData = data.data.map((i: IContactsAxiosResponse) => {
       return {

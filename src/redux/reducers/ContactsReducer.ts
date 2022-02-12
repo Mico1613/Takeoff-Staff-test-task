@@ -3,12 +3,12 @@ import IContactsData from "../types/IContactsData";
 
 interface IContacts {
   data: IContactsData[];
-  isLoading: boolean;
+  isLoaded: boolean;
   errorMessage: string;
 }
 const initialState: IContacts = {
   data: [],
-  isLoading: false,
+  isLoaded: false,
   errorMessage: "",
 };
 
@@ -17,10 +17,8 @@ export default (
   action: ContactsActionTypes
 ): IContacts => {
   switch (action.type) {
-    case "ON_LOADING":
-      return { ...state, isLoading: true };
     case "LOADED":
-      return { ...state, isLoading: false };
+      return { ...state, isLoaded: true };
     case "ON_ERROR":
       return { ...state, errorMessage: action.payload };
     case "SET_DATA":

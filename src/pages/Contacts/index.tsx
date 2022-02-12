@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { getContacts } from "../../redux/actions/ContactsActions";
@@ -7,14 +6,20 @@ import Search from "../../components/Search";
 import IContactsData from "../../redux/types/IContactsData";
 
 function Contacts() {
+  const dispatch = useAppDispatch();
+  const { data } = useAppSelector((state) => state.ContactsReducer);
   React.useEffect(() => {
     dispatch(getContacts());
   }, []);
 
-  const dispatch = useAppDispatch();
-  const { data } = useAppSelector((state) => state.ContactsReducer);
+  React.useEffect(() => {
+    if (data) {
+      setFilteredValue(data);
+    }
+  }, [data]);
 
   const [filteredValue, setFilteredValue] = useState<IContactsData[]>(data);
+
   function onFilter(text: string) {
     const filteredData = data.filter((item) =>
       JSON.stringify(item)
@@ -25,10 +30,10 @@ function Contacts() {
     setFilteredValue(filteredData);
   }
   return (
-    <div>
+    <main>
       <Search onFilter={onFilter} />
       <ContactsItems filteredValue={filteredValue} />
-    </div>
+    </main>
   );
 }
 

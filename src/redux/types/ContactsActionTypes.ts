@@ -1,8 +1,5 @@
 import IContactsData from "./IContactsData";
 
-interface IContactsOnLoading {
-  type: "ON_LOADING";
-}
 interface IContactsLoaded {
   type: "LOADED";
 }
@@ -16,7 +13,6 @@ interface IContactsSetData {
 }
 
 export type ContactsActionTypes =
-  | IContactsOnLoading
   | IContactsLoaded
   | IContactsLoadingBreakWithError
   | IContactsSetData;
