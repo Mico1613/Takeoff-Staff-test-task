@@ -16,13 +16,13 @@ function Contacts() {
 
   const [filteredValue, setFilteredValue] = useState<IContactsData[]>(data);
   function onFilter(text: string) {
-    const kek = data.filter((item) =>
+    const filteredData = data.filter((item) =>
       JSON.stringify(item)
         .toLocaleLowerCase()
         .trim()
         .includes(text.toLocaleLowerCase().trim())
     );
-    setFilteredValue(kek);
+    setFilteredValue(filteredData);
   }
   return (
     <div>

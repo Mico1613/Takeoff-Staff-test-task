@@ -10,7 +10,6 @@ type Props = {
 
 function ContactsItems({ filteredValue }: Props) {
   
-
   return (
     <div className={styles.wrapper}>
       {filteredValue?.map((item, index) => {

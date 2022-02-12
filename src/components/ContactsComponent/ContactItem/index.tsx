@@ -12,9 +12,9 @@ function ContactItem({ item }: Props) {
       <p>E-mail: {item.email}</p>
       <p>Phone: {item.phone}</p>
       <p>
-        Address: {item.address.city}, {item.address.street}
+        Address: {item.city}, {item.street}
       </p>
-      <p>Company: {item.company.name}</p>
+      <p>Company: {item.company}</p>
     </div>
   );
 }
