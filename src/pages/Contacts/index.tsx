@@ -4,7 +4,7 @@ import { getContacts } from "../../redux/actions/ContactsActions";
 import ContactsItems from "../../components/ContactsComponent/ContactsItems";
 import Search from "../../components/Search";
 import IContactsData from "../../redux/types/IContactsData";
-
+import styles from './Contacts.module.scss'
 function Contacts() {
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state) => state.ContactsReducer);
@@ -30,7 +30,7 @@ function Contacts() {
     setFilteredValue(filteredData);
   }
   return (
-    <main>
+    <main className={styles.contacts}>
       <Search onFilter={onFilter} />
       <ContactsItems filteredValue={filteredValue} />
     </main>

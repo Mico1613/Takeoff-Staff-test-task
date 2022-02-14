@@ -1,8 +1,7 @@
 .wrapper {
-  max-width: 1400px;
   width: 100%;
+  min-height: calc(100vh - 100px);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 60px;
+  align-items: center;
 }
