@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux-hooks";
 import { getContacts } from "../../redux/actions/ContactsActions";
 import ContactsItems from "../../components/ContactsComponent/ContactsItems";
 import Search from "../../components/Search";
 import IContactsData from "../../redux/types/IContactsData";
-import styles from './Contacts.module.scss'
+import styles from "./Contacts.module.scss";
+import useFilter from "../../hooks/useFilter";
 function Contacts() {
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state) => state.ContactsReducer);
@@ -12,23 +13,8 @@ function Contacts() {
     dispatch(getContacts());
   }, []);
 
-  React.useEffect(() => {
-    if (data) {
-      setFilteredValue(data);
-    }
-  }, [data]);
+  const [filteredValue, onFilter] = useFilter(data);
 
-  const [filteredValue, setFilteredValue] = useState<IContactsData[]>(data);
-
-  function onFilter(text: string) {
-    const filteredData = data.filter((item) =>
-      JSON.stringify(item)
-        .toLocaleLowerCase()
-        .trim()
-        .includes(text.toLocaleLowerCase().trim())
-    );
-    setFilteredValue(filteredData);
-  }
   return (
     <main className={styles.contacts}>
       <Search onFilter={onFilter} />
