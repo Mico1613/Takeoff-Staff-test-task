@@ -9,6 +9,7 @@
   height: 200px;
   justify-content: center;
   position: relative;
+  z-index: 0;
   .removeSvg {
     cursor: pointer;
     position: absolute;
