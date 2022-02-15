@@ -36,6 +36,14 @@ export default function useAddContact(
           ...formValue,
         })
       );
+      setFormValue({
+        name: "",
+        email: "",
+        phone: "",
+        city: "",
+        street: "",
+        company: "",
+      });
       setIsOpenedWindow(false);
     }
   };
