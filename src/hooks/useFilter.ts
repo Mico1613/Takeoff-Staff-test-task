@@ -9,8 +9,8 @@ export default function useFilter(data: IContactsData[]) {
       setFilteredValue(data);
     }
   }, [data]);
-  
-  function filter(text: string) {
+
+  function onFilter(text: string) {
     const filteredData = data.filter((item) =>
       JSON.stringify(item)
         .toLocaleLowerCase()
@@ -19,10 +19,6 @@ export default function useFilter(data: IContactsData[]) {
     );
     setFilteredValue(filteredData);
   }
-
-  const onFilter = useCallback((text) => {
-    filter(text);
-  }, []);
 
   return [filteredValue, onFilter] as const;
 }
