@@ -1,4 +1,4 @@
-import { LoginConstants } from "../Constants";
+import { LoginConstants } from "../LoginConstants";
 export const openRegistrationWindow = {
   type: LoginConstants.OPEN_REGISTRATION_WINDOW,
 };

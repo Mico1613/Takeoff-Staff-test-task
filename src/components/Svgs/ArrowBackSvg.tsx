@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-function ArrowBackSvg({}: Props) {
+function ArrowBackSvg() {
   return (
     <svg
       width="45px"

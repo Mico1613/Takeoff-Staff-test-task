@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import React, { RefObject } from "react";
 import useAddContact from "../../../hooks/useAddContact";
 import styles from "./Modal.module.scss";
 
@@ -7,7 +7,7 @@ type Props = {
   windowRef: RefObject<HTMLDivElement>;
 };
 
-function Modal({ setIsOpenedWindow, windowRef }: Props) {
+const Modal = React.memo(({ setIsOpenedWindow, windowRef }: Props) => {
   const [formValue, handleChange, handleSubmit] =
     useAddContact(setIsOpenedWindow);
 
@@ -28,6 +28,6 @@ function Modal({ setIsOpenedWindow, windowRef }: Props) {
       </form>
     </div>
   );
-}
+});
 
 export default Modal;

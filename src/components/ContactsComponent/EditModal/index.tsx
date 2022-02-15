@@ -1,4 +1,4 @@
-import { RefObject } from "react";
+import React, { RefObject } from "react";
 import { useAppDispatch } from "../../../hooks/redux-hooks";
 import useEditContact from "../../../hooks/useEditContact";
 import { editContact } from "../../../redux/actions/ContactsActions";
@@ -10,7 +10,7 @@ type Props = {
   setIsOpenedWindow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function EditModal({ item, windowRef, setIsOpenedWindow }: Props) {
+const EditModal = React.memo(({ item, windowRef, setIsOpenedWindow }: Props) =>{
   const [formValue, handleChange] = useEditContact(item);
   const dispatch = useAppDispatch();
   const onEditContact = () => {
@@ -38,6 +38,6 @@ function EditModal({ item, windowRef, setIsOpenedWindow }: Props) {
       </div>
     </div>
   );
-}
+})
 
 export default EditModal;

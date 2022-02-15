@@ -1,4 +1,4 @@
-import { LoginConstants } from "../Constants";
+import { LoginConstants } from "../LoginConstants";
 import { LoginActionTypes } from "../types/LoginActionTypes";
 
 interface ILogin {

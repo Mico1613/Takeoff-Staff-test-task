@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-function EditSvg({}: Props) {
+function EditSvg() {
   return (
     <svg
       version="1.1"

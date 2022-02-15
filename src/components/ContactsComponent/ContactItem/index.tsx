@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAppDispatch } from "../../../hooks/redux-hooks";
 import usePopupController from "../../../hooks/usePopupController";
 import { removeContact } from "../../../redux/actions/ContactsActions";

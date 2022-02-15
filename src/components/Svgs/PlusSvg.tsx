@@ -1,8 +1,4 @@
-import React from "react";
-
-type Props = {};
-
-function PlusSvg({}: Props) {
+function PlusSvg() {
   return (
     <svg
       width="22px"

@@ -1,3 +1,4 @@
+import React from "react";
 import IContactsData from "../../../redux/types/IContactsData";
 import ContactItem from "../ContactItem";
 import styles from "./ContactsItems.module.scss";
@@ -6,7 +7,7 @@ type Props = {
   filteredValue: IContactsData[] | undefined;
 };
 
-function ContactsItems({ filteredValue }: Props) {
+const ContactsItems = React.memo(({ filteredValue }: Props) => {
   return (
     <div className={styles.wrapper}>
       {filteredValue?.map((item, index) => {
@@ -19,6 +20,6 @@ function ContactsItems({ filteredValue }: Props) {
       })}
     </div>
   );
-}
+})
 
 export default ContactsItems;

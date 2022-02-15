@@ -4,7 +4,7 @@ type Props = {
   onFilter: (text: string) => void;
 };
 
-function Search({ onFilter }: Props) {
+const Search = React.memo(({ onFilter }: Props) => {
   const [inputValue, setInputValue] = useState("");
   useEffect(() => {
     onFilter(inputValue);
@@ -21,6 +21,6 @@ function Search({ onFilter }: Props) {
       }}
     />
   );
-}
+})
 
 export default Search;

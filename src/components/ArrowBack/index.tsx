@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppDispatch } from "../../hooks/redux-hooks";
 import { closeRegistrationWindow } from "../../redux/actions/LoginActions";
 import ArrowBackSvg from "../Svgs/ArrowBackSvg";

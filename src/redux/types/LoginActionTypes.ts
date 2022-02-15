@@ -1,4 +1,4 @@
-import { LoginConstants } from "../Constants";
+import { LoginConstants } from "../LoginConstants";
 
 interface IOpenRegistrationWindow {
     type: LoginConstants.OPEN_REGISTRATION_WINDOW

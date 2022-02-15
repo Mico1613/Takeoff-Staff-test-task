@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import IContactsData from "../redux/types/IContactsData";
 
 export default function useFilter(data: IContactsData[]) {
@@ -9,8 +9,8 @@ export default function useFilter(data: IContactsData[]) {
       setFilteredValue(data);
     }
   }, [data]);
-
-  function onFilter(text: string) {
+  
+  function filter(text: string) {
     const filteredData = data.filter((item) =>
       JSON.stringify(item)
         .toLocaleLowerCase()
@@ -19,6 +19,10 @@ export default function useFilter(data: IContactsData[]) {
     );
     setFilteredValue(filteredData);
   }
+
+  const onFilter = useCallback((text) => {
+    filter(text);
+  }, []);
 
   return [filteredValue, onFilter] as const;
 }
