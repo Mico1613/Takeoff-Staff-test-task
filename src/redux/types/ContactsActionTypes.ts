@@ -19,9 +19,14 @@ interface IContactsRemoveContact {
   type: "REMOVE_CONTACT";
   payload: number;
 }
+interface IContactsEditContact {
+  type: "EDIT_CONTACT";
+  payload: IContactsData;
+}
 export type ContactsActionTypes =
   | IContactsLoaded
   | IContactsLoadingBreakWithError
   | IContactsSetData
   | IContactsAddContact
-  | IContactsRemoveContact;
+  | IContactsRemoveContact
+  | IContactsEditContact;

@@ -28,6 +28,17 @@ export default (
     case "REMOVE_CONTACT":
       const filteredArr = state.data.filter((i) => i.id !== action.payload);
       return { ...state, data: filteredArr };
+    case "EDIT_CONTACT":
+      const editedArr = state.data.map((item) => {
+        if (item.id === action.payload.id) {
+          return action.payload;
+        }
+        return item;
+      });
+      return {
+        ...state,
+        data: [...editedArr],
+      };
     default:
       return state;
   }

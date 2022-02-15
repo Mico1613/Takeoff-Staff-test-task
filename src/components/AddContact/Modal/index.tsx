@@ -1,6 +1,5 @@
-import { RefObject, useRef } from "react";
+import { RefObject } from "react";
 import useAddContact from "../../../hooks/useAddContact";
-import IContactsData from "../../../redux/types/IContactsData";
 import styles from "./Modal.module.scss";
 
 type Props = {

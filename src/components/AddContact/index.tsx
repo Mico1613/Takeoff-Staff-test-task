@@ -1,12 +1,10 @@
-import useAddContact from "../../hooks/useAddContact";
 import usePopupController from "../../hooks/usePopupController";
 import Modal from "./Modal";
 import PlusSvg from "../Svgs/PlusSvg";
 import styles from "./AddContact.module.scss";
 
-type Props = {};
 
-function AddContact({}: Props) {
+function AddContact() {
   const [isOpenedWindow, setIsOpenedWindow, windowRef] = usePopupController();
 
   return (

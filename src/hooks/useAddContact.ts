@@ -3,7 +3,7 @@ import { addContact } from "../redux/actions/ContactsActions";
 import { useAppDispatch } from "./redux-hooks";
 
 export default function useAddContact(
-  setIsOpenedWindow: React.Dispatch<React.SetStateAction<boolean>>
+  setIsOpenedWindow?: React.Dispatch<React.SetStateAction<boolean>>
 ) {
   const [formValue, setFormValue] = useState({
     name: "",
@@ -44,7 +44,7 @@ export default function useAddContact(
         street: "",
         company: "",
       });
-      setIsOpenedWindow(false);
+      setIsOpenedWindow && setIsOpenedWindow(false);
     }
   };
   return [formValue, handleChange, handleSubmit] as const;
