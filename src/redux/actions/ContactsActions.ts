@@ -25,7 +25,6 @@ interface IContactsAxiosResponse {
   };
 }
 
-
 export const contactsLoaded = {
   type: "LOADED",
 };
@@ -37,6 +36,11 @@ export const contactsLoadingBreakWithError = (payload: string) => ({
 
 export const setData = (payload: IContactsData[]) => ({
   type: "SET_DATA",
+  payload,
+});
+
+export const addContact = (payload: IContactsData) => ({
+  type: "ADD_CONTACT",
   payload,
 });
 

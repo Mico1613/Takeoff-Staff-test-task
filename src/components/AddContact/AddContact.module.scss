@@ -1,0 +1,75 @@
+.addContact {
+  min-width: 100px;
+  .btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: all 01s;
+    p {
+      color: rgb(204, 197, 197);
+      font-size: 1.3rem;
+      margin-left: 10px;
+    }
+    &:hover {
+      p {
+        color: #fff;
+        text-shadow: 2px 2px 5px #000;
+      }
+    }
+  }
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.726);
+    .form {
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: rgb(0, 0, 0);
+      padding: 50px;
+      border: 2px solid #fff;
+      border-radius: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      span {
+        margin-bottom: 20px;
+        background-color: inherit;
+        display: flex;
+        align-items: center;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        label {
+          width: 90px;
+        }
+        input {
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 1.2rem;
+          color: #fff;
+          background-color: rgb(63, 63, 63);
+        }
+      }
+      .addUserBtn {
+        margin-top: 20px;
+        padding: 10px 0;
+        border-radius: 10px;
+        background-color: rgb(230, 230, 230);
+        width: 100%;
+        color: #000;
+        font-size: 1.5rem;
+        font-weight: 700;
+        box-shadow: 1px 1px 10px 1px rgb(214, 214, 214);
+        &:focus,
+        &:hover {
+          background-color: rgb(97, 228, 36);
+          box-shadow: 1px 1px 10px 1px rgb(41, 255, 77);
+        }
+      }
+    }
+  }
+}

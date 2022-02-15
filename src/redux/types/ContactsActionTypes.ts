@@ -11,8 +11,13 @@ interface IContactsSetData {
   type: "SET_DATA";
   payload: IContactsData[];
 }
+interface IContactsAddContact {
+  type: "ADD_CONTACT";
+  payload: IContactsData;
+}
 
 export type ContactsActionTypes =
   | IContactsLoaded
   | IContactsLoadingBreakWithError
-  | IContactsSetData;
+  | IContactsSetData
+  | IContactsAddContact;

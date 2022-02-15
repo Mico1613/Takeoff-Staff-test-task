@@ -6,6 +6,7 @@ import Search from "../../components/Search";
 import IContactsData from "../../redux/types/IContactsData";
 import styles from "./Contacts.module.scss";
 import useFilter from "../../hooks/useFilter";
+import AddContact from "../../components/AddContact";
 function Contacts() {
   const dispatch = useAppDispatch();
   const { data } = useAppSelector((state) => state.ContactsReducer);
@@ -17,7 +18,10 @@ function Contacts() {
 
   return (
     <main className={styles.contacts}>
-      <Search onFilter={onFilter} />
+      <header className={styles.headerWrapper}>
+        <Search onFilter={onFilter} />
+        <AddContact/>
+      </header>
       <ContactsItems filteredValue={filteredValue} />
     </main>
   );
