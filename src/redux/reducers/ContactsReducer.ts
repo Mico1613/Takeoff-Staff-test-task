@@ -25,6 +25,9 @@ export default (
       return { ...state, data: action.payload };
     case "ADD_CONTACT":
       return { ...state, data: [...state.data, action.payload] };
+    case "REMOVE_CONTACT":
+      const filteredArr = state.data.filter((i) => i.id !== action.payload);
+      return { ...state, data: filteredArr };
     default:
       return state;
   }

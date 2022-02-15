@@ -43,7 +43,10 @@ export const addContact = (payload: IContactsData) => ({
   type: "ADD_CONTACT",
   payload,
 });
-
+export const removeContact = (payload: number) => ({
+  type: "REMOVE_CONTACT",
+  payload,
+});
 export const getContacts = () => async (dispatch: AppDispatch) => {
   try {
     const data = await axios.get("https://jsonplaceholder.typicode.com/users");

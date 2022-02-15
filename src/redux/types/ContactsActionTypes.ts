@@ -15,9 +15,13 @@ interface IContactsAddContact {
   type: "ADD_CONTACT";
   payload: IContactsData;
 }
-
+interface IContactsRemoveContact {
+  type: "REMOVE_CONTACT";
+  payload: number;
+}
 export type ContactsActionTypes =
   | IContactsLoaded
   | IContactsLoadingBreakWithError
   | IContactsSetData
-  | IContactsAddContact;
+  | IContactsAddContact
+  | IContactsRemoveContact;
